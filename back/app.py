@@ -4,7 +4,7 @@ from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
-from models import db, Roles, Users, Blog
+from models import db, Roles, Users, Categoria, Blog, blocat
 from flask_mail import Mail, Message
 from werkzeug.utils import secure_filename
 from functions import allowed_file
@@ -106,8 +106,6 @@ def register():
 
     return jsonify(data), 201
 
-
-    
     if request.method == 'PUT':
         name = request.json.get('name', None)
         lastname = request.json.get('lastname', None)
@@ -145,12 +143,12 @@ def register():
         return jsonify({"msg":"Usuario borrado!"}), 200
 
 @app.route('/blog', methods=['GET', 'POST'])
-@app.route('/blog/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/blog/<int:blog_id>', methods=['GET', 'PUT', 'DELETE'])
 # @jwt_required
-def blog(id = None):
+def blog(blog_id = None):
     if request.method == 'GET':
-        if id is not None:
-            blog = Blog.query.get(id)
+        if blog_id is not None:
+            blog = Blog.query.get(blog_id)
             if blog:
                 return jsonify(blog.serialize()), 200
             else:
@@ -169,6 +167,7 @@ def blog(id = None):
         subtitulo = request.json.get('subtitulo', None)
         cuerpo = request.json.get('cuerpo', None)
         code = request.json.get('code', None)
+        categorias = request.json.get('categorias', None)
         
         blog = Blog()
         
@@ -180,6 +179,7 @@ def blog(id = None):
         blog.subtitulo = subtitulo
         blog.cuerpo = cuerpo
         blog.code = code
+        blog.categorias = categorias
         
         db.session.add(blog) 
         db.session.commit()  
@@ -196,7 +196,7 @@ def blog(id = None):
         cuerpo = request.json.get('cuerpo', None)
         code = request.json.get('code', None)
 
-        blog = Blog.query.get(id)
+        blog = Blog.query.get(blog_id)
         if not blog:
             return jsonify({"msg": "Blog no encontrado"}), 404
          
@@ -214,12 +214,61 @@ def blog(id = None):
         return jsonify(blog.serialize()), 201
 
     if request.method == 'DELETE':
-        blog = Blog.query.get(id)
+        blog = Blog.query.get(blog_id)
         if not blog:
             return jsonify({"msg": "Blog no encontrado"}), 404
         db.session.delete(blog)
         db.session.commit()
         return jsonify({"msg":"Blog borrado!"}), 200
+
+@app.route('/categoria', methods=['GET', 'POST'])
+@app.route('/categoria/<int:categoria_id>', methods=['GET', 'PUT', 'DELETE'])
+# @jwt_required
+def categoria(categoria_id = None):
+    if request.method == 'GET':
+        if categoria_id is not None:
+            categoria = Categoria.query.get(categoria_id)
+            if categoria:
+                return jsonify(categoria.serialize()), 200
+            else:
+                return jsonify({"msg": " Categoria no encontrada"}), 404
+        else:
+            categorias = Categoria.query.all()
+            categorias = list(map(lambda categoria: categoria.serialize(), categorias))
+            return jsonify(categorias), 200
+
+    if request.method == 'POST':
+        categoria = request.json.get('categoria', None)
+        
+        categorias = Categoria()
+        
+        categorias.categoria = categoria
+        
+        db.session.add(categorias) 
+        db.session.commit()  
+
+        return jsonify(categorias.serialize()), 201
+    
+    if request.method == 'PUT':
+        categoria = request.json.get('categoria', None)
+
+        categorias = Categoria.query.get(categoria_id)
+        if not categorias:
+            return jsonify({"msg": "Categoria no encontrada"}), 404
+         
+        categorias.categoria = categoria
+        
+        db.session.commit()  
+
+        return jsonify(categorias.serialize()), 201
+
+    if request.method == 'DELETE':
+        categoria = Categoria.query.get(categoria_id)
+        if not categoria:
+            return jsonify({"msg": "Categoria no encontrada"}), 404
+        db.session.delete(categoria)
+        db.session.commit()
+        return jsonify({"msg":"Categoria borrada!"}), 200
 
 @manager.command
 def loadroles():
@@ -238,6 +287,22 @@ def loadroles():
     print("Roles creados")
 
 @manager.command
+def loadcat():
+    categorias = Categoria()
+    categorias.categoria = "Economia"
+
+    db.session.add(categorias)
+    db.session.commit()
+
+    categorias = Categoria()
+    categorias.categoria = "Tecnologia"
+
+    db.session.add(categorias)
+    db.session.commit()
+
+    print("Categorias de prueba creadas")
+
+@manager.command
 def loadblog():
     blog = Blog()
     blog.code = "Code del Primer blog"
@@ -248,6 +313,8 @@ def loadblog():
     blog.url = "Primer_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 1
+    blog.categorias = "Economia"
 
     db.session.add(blog)
     db.session.commit()
@@ -261,6 +328,8 @@ def loadblog():
     blog.url = "segundo_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 1
+    blog.categorias = "Economia"
 
     db.session.add(blog)
     db.session.commit()
@@ -274,6 +343,8 @@ def loadblog():
     blog.url = "tercer_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 1
+    blog.categorias = "Economia"
 
     db.session.add(blog)
     db.session.commit()
@@ -287,6 +358,8 @@ def loadblog():
     blog.url = "cuarto_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 2
+    blog.categorias = "Tecnologia"
 
     db.session.add(blog)
     db.session.commit()
@@ -300,6 +373,8 @@ def loadblog():
     blog.url = "quinto_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 2
+    blog.categorias = "Tecnologia"
 
     db.session.add(blog)
     db.session.commit()
@@ -313,6 +388,8 @@ def loadblog():
     blog.url = "sexto_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 1
+    blog.categorias = "Economia"
 
     db.session.add(blog)
     db.session.commit()
@@ -326,11 +403,13 @@ def loadblog():
     blog.url = "septimo_blog"
     blog.video = "Btlnfhh-Gac"
     blog.foto = "https://picsum.photos/300/400"
+    # blog.categorias = 2
+    blog.categorias = "Tecnologia"
 
     db.session.add(blog)
     db.session.commit()
 
-    print("Agregados los blog de prueba de ")
+    print("Agregados los blog de prueba")
 
 @manager.command
 def loadadmin():

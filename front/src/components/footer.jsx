@@ -37,22 +37,22 @@ const Footer = props => {
                     <div className="row py-2">
                         <div className="col-md-12">
                             <div className="mb-4 d-flex justify-content-center">
-                                <a className="stdbtn" href="http://www.facebook.com" target="_blank">
+                                <a className="stdbtn" rel="noreferrer noopener" href="http://www.facebook.com" target="_blank">
                                     <i className="fab fa-facebook-f fa-lg white-text mr-5"> </i>
                                 </a>
-                                <a className="stdbtn" href="http://www.twitter.com" target="_blank">
+                                <a className="stdbtn" rel="noreferrer noopener" href="http://www.twitter.com" target="_blank">
                                     <i className="fab fa-twitter fa-lg white-text mr-5"> </i>
                                 </a>
-                                <a className="stdbtn" href="http://www.linkedin.com" target="_blank">
+                                <a className="stdbtn" rel="noreferrer noopener" href="http://www.linkedin.com" target="_blank">
                                     <i className="fab fa-linkedin-in fa-lg white-text mr-5"> </i>
                                 </a>
-                                <a className="stdbtn" href="http://www.github.com" target="_blank">
+                                <a className="stdbtn" rel="noreferrer noopener" href="http://www.github.com" target="_blank">
                                     <i className="fab fa-github fa-lg white-text mr-5"> </i>
                                 </a>
-                                <a className="stdbtn" href="http://www.instagram.com" target="_blank">
+                                <a className="stdbtn" rel="noreferrer noopener" href="http://www.instagram.com" target="_blank">
                                     <i className="fab fa-instagram fa-lg white-text mr-5"> </i>
                                 </a>
-                                <a className="stdbtn" href="http://www.pinterest.com" target="_blank">
+                                <a className="stdbtn" rel="noreferrer noopener" href="http://www.pinterest.com" target="_blank">
                                     <i className="fab fa-pinterest fa-lg white-text"> </i>
                                 </a>
                             </div>

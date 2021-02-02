@@ -1,0 +1,23 @@
+body {
+    background-color: black !important;
+    color: white !important;
+}
+
+.personalColor {
+    background-color: black !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.nav-link, .navbar-brand {
+    color: gray !important;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: rgb(150, 150, 150) !important;
+}
+
+.navbar-toggler-icon { 
+    color: rgb(150, 150, 150);
+    background-image: none !important;
+}

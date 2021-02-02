@@ -16,6 +16,11 @@ body{
     grid-template-rows: auto 1fr auto;
   }
   
+.personalColour{
+  background-color: black;
+  color: white;
+}
+
   header{ 
     min-height:50px;
     background:lightcyan; 

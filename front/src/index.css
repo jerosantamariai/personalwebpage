@@ -22,7 +22,7 @@ body {
     background-image: none !important;
 }
 
-.introphoto {
+.introphoto, .JeroMac {
     filter: opacity(75%);
 }
 

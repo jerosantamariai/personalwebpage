@@ -14,7 +14,7 @@ body {
 }
 
 .nav-link:hover, .navbar-brand:hover {
-    color: rgb(150, 150, 150) !important;
+    color: rgb(199, 199, 199) !important;
 }
 
 .navbar-toggler-icon { 
@@ -24,4 +24,12 @@ body {
 
 .introphoto {
     filter: opacity(75%);
+}
+
+.cvtainer {
+    padding: 100px 0px;
+}
+
+.JSMIFoto {
+    border-radius: 750px;
 }

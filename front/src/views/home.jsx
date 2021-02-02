@@ -1,5 +1,5 @@
 import React from 'react';
-import Intro from './intro';
+import Intro from './landing/intro';
 
 const Home = props => {
     return (

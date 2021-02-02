@@ -1,7 +1,7 @@
 import React from 'react';
 import Intro from './intro';
 
-const Home = () => {
+const Home = props => {
     return (
         <Intro />
     );

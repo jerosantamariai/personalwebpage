@@ -26,12 +26,13 @@ body {
     filter: opacity(75%);
 }
 
-.cvtainer {
+/* .cvtainer {
     padding: 100px 0px;
-}
+} */
 
 .JSMIFoto {
     border-radius: 750px;
+    text-align: center;
 }
 
 

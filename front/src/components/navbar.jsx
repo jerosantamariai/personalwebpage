@@ -11,7 +11,7 @@ const Navbar = props => {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link className="nav-link" to="#">Conoceme!</Link>
+                        <Link className="nav-link" to="/conoceme">Conoceme!</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/cv">Curriculum</Link>

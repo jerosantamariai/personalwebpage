@@ -20,7 +20,7 @@ const Footer = props => {
                             <ol>
                             <li>- Negocios</li>
                             <li>- Economía</li>
-                            <li>- Programación</li>
+                            <li>- Programación y Desarrollo</li>
                             <li>- Energías Renovables</li>
                             </ol>
                             {/* <li><Link to="http://scanfcode.com/category/front-end-development/">UI Design</Link></li>

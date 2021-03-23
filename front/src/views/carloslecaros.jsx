@@ -45,6 +45,7 @@ const CarlosLecaros = props => {
                             <li><strong>Tercera Semana:</strong> Retroalimentación del resultado de la página web.</li>
                         </ol>
                         <p>Trabajos adicionales de baja especialización, tiene un valor de $ 20.000 la hora. Se puede entregar un servicio adicional, que consta de 20 trabajos adicionales de baja especialización por 2 años por un monto de $ 300.000 líquidos.</p>
+                        <p>Todo el trabajo incluye la optimización y la configuración de la página web, asi como la instrucción sobre el uso de CPanel en los aspectos más relevantes para el usuario.</p>
                         <h4><strong>PORTAFOLIO</strong></h4>
                         <div className="text-center">
                             <a href="http://www.protegepyme.com" target="_blank" rel="noreferrer"><img src={LogoPP} alt="ProtegePyme" className="portimg" /></a>

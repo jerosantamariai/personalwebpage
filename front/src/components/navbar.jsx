@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = props => {
     return (
-        <nav className="navbar navbar-expand-lg personalColor">
-            <Link className="navbar-brand" to="/"><strong>&lt;JSMI /&gt;</strong></Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-lg personalColor no-gutters">
+            <Link className="navbar-brand no-gutters" to="/"><strong>&lt;JSMI /&gt;</strong></Link>
+            <button className="navbar-toggler no-gutters" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
+            <div className="collapse navbar-collapse no-gutters" id="navbarNavDropdown">
+                <ul className="navbar-nav ml-auto no-gutters">
+                    <li className="nav-item no-gutters">
                         <Link className="nav-link" to="/conoceme">Conoceme!</Link>
                     </li>
                     <li className="nav-item">

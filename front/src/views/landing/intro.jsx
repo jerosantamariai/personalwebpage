@@ -3,16 +3,16 @@ import JeroBrazos from '../../img/jeroBrazos.png'
 
 const Intro = props => {
     return (
-        <div className="introcontainer d-flex">
-            <div className="row mx-auto py-5">
-                <div className="col-sm-12 col-md-6 d-flex py-5 justify-content-center">
-                    <img src={JeroBrazos} alt="Jero" className="introphoto" style={{ width: 400 }} />
+        <div className="introcontainer d-flex no-gutters">
+            <div className="row mx-auto py-3 no-gutters">
+                <div className="col-12 col-sm-6 d-flex py-5 justify-content-center no-gutters">
+                    <img src={JeroBrazos} alt="Jero" className="introphoto no-gutters" style={{ width: 400 }} />
                 </div>
-                <div className="col-sm-12 col-md-6 d-flex justify-content-center my-auto introhi">
+                <div className="col-12 col-sm-6 d-flex justify-content-center px-2 my-auto introhi no-gutters">
                     <div>
-                        <h2 className="text-center">¡Hola! Me llamo</h2>
-                        <h2 className="text-center">JERÓNIMO SANTA MARÍA ILLANES</h2>
-                        <h3 className="text-center my-5">¡Bienvenidos a mi sitio web!</h3>
+                        <h2 className="text-center no-gutters">¡Hola! Me llamo</h2>
+                        <h1 className="text-center no-gutters">JERÓNIMO SANTA MARÍA ILLANES</h1>
+                        <h3 className="text-center my-5 no-gutters">¡Bienvenidos a mi sitio web!</h3>
                     </div>
                 </div>
             </div>

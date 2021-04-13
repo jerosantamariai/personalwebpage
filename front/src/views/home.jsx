@@ -1,9 +1,13 @@
 import React from 'react';
 import Intro from './landing/intro';
+import Port from './landing/portafolio';
 
 const Home = props => {
     return (
-        <Intro />
+        <div>
+            <Intro />
+            <Port />
+        </div>
     );
 }
 

@@ -259,4 +259,10 @@ body {
 
 .portimg {
   width: 30%;
+  filter: grayscale(100%);
+}
+
+.portimg:hover {
+  width: 30%;
+  filter: grayscale(0%);
 }

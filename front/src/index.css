@@ -258,11 +258,25 @@ body {
 }
 
 .portimg {
-  width: 30%;
+  width: 20%;
   filter: grayscale(100%);
+  margin: 10px 30px;
 }
 
 .portimg:hover {
-  width: 30%;
+  width: 20%;
   filter: grayscale(0%);
+  margin: 10px 30px;
+}
+
+.portimge {
+  width: 20%;
+  filter: invert(100%);
+  margin: 10px 30px;
+}
+
+.portimge:hover {
+  width: 20%;
+  filter: invert(0%);
+  margin: 10px 30px;
 }

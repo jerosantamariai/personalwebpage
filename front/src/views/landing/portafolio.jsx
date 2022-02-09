@@ -2,6 +2,7 @@ import React from 'react';
 import ABrucher from '../../img/experience/andreabrucher.png';
 import PPyme from '../../img/experience/protegepyme.png';
 import CHube from '../../img/experience/conihube.png';
+import Bonika from '../../img/experience/bonika.png';
 
 const Port = props => {
     return(
@@ -12,6 +13,7 @@ const Port = props => {
                     <a href="http://www.andreabrucher.cl" target="_blank" rel="noreferrer"><img src={ABrucher} alt="AndreaBrucher" className="portimg" /></a>
                     <a href="http://www.protegepyme.com" target="_blank" rel="noreferrer"><img src={PPyme} alt="ProtegePyme" className="portimg" /></a>
                     <a href="http://www.constanzahube.cl" target="_blank" rel="noreferrer"><img src={CHube} alt="ConstanzaHube" className="portimg" /></a>
+                    <a href="http://www.bonika.cl" target="_blank" rel="noreferrer"><img src={Bonika} alt="Bonika" className="portimge" /></a>
                 </div>
             </div>
         </div>
